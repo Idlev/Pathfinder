@@ -76,7 +76,7 @@ program::program()
     button_random_rect.w = 100;
     button_random_rect.h = 50;
 
-    button_random_surface = load_image("imgs/random_button3.png");
+    button_random_surface = load_image("random_button3.png");
     button_random_texture = SDL_CreateTextureFromSurface(renderer,button_random_surface);
 
     //Reset
@@ -85,7 +85,7 @@ program::program()
     button_reset_rect.w = 100;
     button_reset_rect.h = 50;
 
-    button_reset_surface = load_image("imgs/reset_button3.png");
+    button_reset_surface = load_image("reset_button3.png");
     button_reset_texture = SDL_CreateTextureFromSurface(renderer,button_reset_surface);
 
     //Start
@@ -94,12 +94,12 @@ program::program()
     button_start_rect.w = 100;
     button_start_rect.h = 50;
 
-    button_start_surface = load_image("imgs/start_button3.png");
+    button_start_surface = load_image("start_button3.png");
     button_start_texture = SDL_CreateTextureFromSurface(renderer,button_start_surface);
 
 
     //Algo1
-    button_algo1_surface = load_image("imgs/algo1_button.png");
+    button_algo1_surface = load_image("algo1_button.png");
     button_algo1_texture = SDL_CreateTextureFromSurface(renderer,button_algo1_surface);
 
     button_algo1_rect.x = 60;
@@ -108,7 +108,7 @@ program::program()
     button_algo1_rect.h = 50;
 
     //Algo 2
-    button_algo2_surface = load_image("imgs/algo2_button.png");
+    button_algo2_surface = load_image("algo2_button.png");
     button_algo2_texture = SDL_CreateTextureFromSurface(renderer,button_algo2_surface);
 
     button_algo2_rect.x = 60;
@@ -117,7 +117,7 @@ program::program()
     button_algo2_rect.h = 50;
 
     //Chosen algo
-    chosen_surface = load_image("imgs/chosen.png");
+    chosen_surface = load_image("chosen.png");
     chosen_texture = SDL_CreateTextureFromSurface(renderer,chosen_surface);
 
     //Start and Target block values
@@ -217,7 +217,7 @@ void program::handle_events(){
 
                     case SDL_BUTTON_LEFT:
                         mouse_click = true;
-                        std::cout << "Mouse coords x,y: " << mouse_x << "," << mouse_y << std::endl;
+                        //std::cout << "Mouse coords x,y: " << mouse_x << "," << mouse_y << std::endl;
                         break;
                 }
 
@@ -356,7 +356,7 @@ void program::set_solution(){
         if(block_vec[i]->get_type() == 0){
             x_curr = block_vec[i]->get_x();
             y_curr = block_vec[i]->get_y();
-            std::cout << "START x,y: " << x_curr << "," << y_curr << std::endl;
+            //std::cout << "START x,y: " << x_curr << "," << y_curr << std::endl;
         }
     }
 
@@ -626,18 +626,18 @@ void program::algorithm_improved(){
 
             std::vector<int> p1 = block1->get_path();
             std::vector<int> p2 = block1->get_path2();
-            std::cout << "Path 1: ";
+            //std::cout << "Path 1: ";
             print_vector(p1);
 
-            std::cout << "Path 2: ";
+            //std::cout << "Path 2: ";
             print_vector(p2);
 
             std::reverse(p2.begin(),p2.end());
-            std::cout << "Path 2 reversed: ";
+            //std::cout << "Path 2 reversed: ";
             print_vector(p2);
 
             p1.insert(std::end(p1),std::begin(p2),std::end(p2));
-            std::cout << "Appended path: ";
+            //std::cout << "Appended path: ";
             print_vector(p1);
 
             solution_block = block1;
